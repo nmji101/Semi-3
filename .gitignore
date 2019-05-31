@@ -26,4 +26,8 @@ hs_err_pid*
 .project
 .settings
 MANIFEST.MF
+<<<<<<< HEAD
 *.mp4
+=======
+*.mp4
+>>>>>>> a3485468461fb257f9608a41e6f92479e30f0251
