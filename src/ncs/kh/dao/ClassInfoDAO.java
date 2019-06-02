@@ -51,8 +51,8 @@ public class ClassInfoDAO {
 				dto.setInfo_img1(rs.getString("info_img1"));
 				dto.setInfo_img2(rs.getString("info_img2"));
 				dto.setInfo_img3(rs.getString("info_img3"));
-				dto.setInfo_start(rs.getDate("info_start"));
-				dto.setInfo_end(rs.getDate("info_end"));
+				dto.setInfo_start(rs.getString("info_start"));
+				dto.setInfo_end(rs.getString("info_end"));
 				dto.setInfo_date(rs.getDate("info_date"));
 				dto.setInfo_avgstar(rs.getString("info_avgstar"));
 				dto.setInfo_click(rs.getInt("info_click"));

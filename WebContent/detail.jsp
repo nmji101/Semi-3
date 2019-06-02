@@ -252,6 +252,16 @@
             });
             //console.log(disabledDays);
             
+            var minDate = new Date("${classInfo.info_start}");
+        	var maxDate = new Date("${classInfo.info_end}");
+        	var today = new Date();
+        	if(minDate < today){
+        		minDate = today;
+        	}
+        	if(maxDate < today){
+        		var m = maxDate.getMonth(), d = maxDate.getDate(), y = maxDate.getFullYear();
+            	disabledDays.push(y + '-' +(m+1) + '-' + d);
+        	}
             // 특정일 선택막기
             function disableAllTheseDays(date) {
                 var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
@@ -271,6 +281,7 @@
             $("#scdBtn").hide();
             $("#select").hide();
 				
+           
                 $(".calendar").on("click",function(){
                     var calendar = $(".calendar").text();
                     if(calendar == "달력에서 보기"){
@@ -290,7 +301,7 @@
                         			var checkDate = new Date(dateText) //해당날짜
                         			var m = checkDate.getMonth(), d = checkDate.getDate(), y = checkDate.getFullYear(), dy = checkDate.getDay();
                         			var dayLabel = getDayLabel(dy);
-                        			var dateInfo = y+"년 "+m+"월 "+d+"일 ("+dayLabel+")";
+                        			var dateInfo = y+"년 "+(m+1)+"월 "+d+"일 ("+dayLabel+")";
                  			
                         			//alert(resp); //resp : 해당날짜에 현재 신청한 인원
                         			var maximumNum = "${classInfo.info_maxperson}"; //해당 클래스의 정원
@@ -306,8 +317,8 @@
                             ,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'] 
 							,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] 
 							,dayNamesMin: ['일','월','화','수','목','금','토']
-                        	,minDate : new Date("${classInfo.info_start}") //최소날짜  포맷은 2019-5-30 , 2019/05/30 가능 
-                            ,maxDate : new Date("${classInfo.info_end}") //최대날짜 
+                        	,minDate : minDate //최소날짜  포맷은 2019-5-30 , 2019/05/30 가능 
+                            ,maxDate : maxDate //최대날짜 
                         	,beforeShowDay: disableAllTheseDays 
                         });
                         $( "#datepicker" ).show();

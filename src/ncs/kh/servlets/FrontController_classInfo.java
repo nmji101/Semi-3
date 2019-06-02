@@ -58,7 +58,7 @@ public class FrontController_classInfo extends HttpServlet {
 				pw.append(signupNum);
 			}
 		}catch(Exception e) {
-
+			e.printStackTrace();
 		}
 
 	}

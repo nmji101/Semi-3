@@ -16,8 +16,8 @@ public class ClassInfoDTO {
     private String info_img1;
     private String info_img2;
     private String info_img3;
-    private Date info_start; 	//수업시작날짜    날짜형식은 2019-05-30
-    private Date info_end; 		//수업 종료날짜
+    private String info_start; 	//수업시작날짜    날짜형식은 2019-05-30
+    private String info_end; 		//수업 종료날짜
     private Date info_date; 	//수업 등록날짜
     private String info_avgstar;
     private int info_click;
@@ -27,7 +27,7 @@ public class ClassInfoDTO {
 	}
 	public ClassInfoDTO(int info_classid, String info_tutorid, String info_category, String info_title,
 			String info_explain, String info_intro, String info_addr, int info_maxperson, String info_gender,
-			int info_price, String info_img1, String info_img2, String info_img3, Date info_start, Date info_end,
+			int info_price, String info_img1, String info_img2, String info_img3, String info_start, String info_end,
 			Date info_date, String info_avgstar, int info_click) {
 		super();
 		this.info_classid = info_classid;
@@ -127,16 +127,16 @@ public class ClassInfoDTO {
 	public void setInfo_img3(String info_img3) {
 		this.info_img3 = info_img3;
 	}
-	public Date getInfo_start() {
+	public String getInfo_start() {
 		return info_start;
 	}
-	public void setInfo_start(Date info_start) {
+	public void setInfo_start(String info_start) {
 		this.info_start = info_start;
 	}
-	public Date getInfo_end() {
+	public String getInfo_end() {
 		return info_end;
 	}
-	public void setInfo_end(Date info_end) {
+	public void setInfo_end(String info_end) {
 		this.info_end = info_end;
 	}
 	public Date getInfo_date() {
