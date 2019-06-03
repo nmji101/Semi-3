@@ -353,6 +353,27 @@
                 
             });
         </script>
+        
+        <!-- 후기 영역 script -->
+        
+        <script type="text/javascript"> 
+			//<![CDATA[
+			function calcHeight(){
+ 			//find the height of the internal page
+
+ 			var the_height=
+ 			document.getElementById('the_iframe').contentWindow.
+ 			document.body.scrollHeight;
+
+ 			//change the height of the iframe
+ 			document.getElementById('the_iframe').height=
+ 			the_height;
+
+			 //document.getElementById('the_iframe').scrolling = "no";
+ 			document.getElementById('the_iframe').style.overflow = "hidden";
+			}
+			//
+		</script>
     </head>
     <body>
     <c:forEach var="date" items="${closedDateList}">
@@ -494,7 +515,10 @@
                     </div>
                     <div id="review" class="class_detail">
                         <h3>후기</h3>
-                        <div>후기용 게시판//임시자리~</div>
+                        <!-- 후기영역 -->
+                        <div>
+                        	<iframe src="http://localhost:8080/Semi/index.review" id="the_iframe" onload="calcHeight();" name="WrittenPublic" title="게시판뷰" frameborder="0" scrolling="no" style="overflow-x:hidden; overflow:auto; width:100%; min-height:500px;"></iframe>
+                        </div>
                     </div>
                     <!--                    여기까지 mainContent   -->
                 </div>
